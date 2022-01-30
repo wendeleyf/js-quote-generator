@@ -16,8 +16,9 @@ function newQuote(){
 	if(!quote.author){
 		authorText.textContent = 'Desconhecido';
 	}else{
-		quoteText.textContent = quote.text;
+		authorText.textContent = quote.author;
 	}
+	quoteText.textContent = quote.text;
 
 	// Verificar o tamanho da frase para determinar seu estilo;
 	if(quote.text.length > 120){
@@ -38,6 +39,9 @@ async function getQuotes(){
 		// Catch Errors
 	}
 }
+
+//  Event Listeners
+newQuoteBtn.addEventListener('click', newQuote);
 
 // Init
 getQuotes();
